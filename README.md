@@ -1,16 +1,15 @@
-# flutter_bloc_testing3
+# Ejemplo flutter_bloc - hydrated_bloc y freezed para mantener el(los) estado(s) de una app.
 
-A new Flutter project.
+Versión de flutter utilizada 3.7.12
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1) Instalar las dependencias
+   - hydrated_bloc
+   - path_provider
+2) Definir HydratecBloc.storage en el archivo main.dart
+3) Extender el bloc con HydratedMixin y agregar el método hydrate() al constructor del bloc
+4) Generar los metodos override from y to JSON
+5) En el metodo fromJSON especificar la llave del json que viene por parametro, en este caso 'selectedCategory'
+6) En el metodo toJSON retornar el estado del bloc en cuestion en este caso 'onCategorySelect' y especificar en el json
+   la misma llave que en el paso 5 (selectedCategory).
